@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinochadinho | Achadinhos Imperdíveis</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo Dinochadinho" class="logo" />
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank"><img src="instagram.png" alt="Instagram" /></a>
+      <a href="https://tiktok.com" target="_blank"><img src="tiktok.png" alt="TikTok" /></a>
+      <a href="https://wa.me/seunumero" target="_blank"><img src="whatsapp.png" alt="WhatsApp" /></a>
+    </div>
+  </header>
+
+  <section class="filters">
+    <button class="filter-button" data-category="todos">Todos</button>
+    <button class="filter-button" data-category="beleza">Beleza</button>
+    <button class="filter-button" data-category="casa">Casa</button>
+    <button class="filter-button" data-category="tech">Tecnologia</button>
+    <button class="filter-button" data-category="pet">Pet</button>
+    <button class="filter-button" data-category="cozinha">Cozinha</button>
+    <button class="filter-button" data-category="eletronicos">Eletrônicos</button>
+  </section>
+
+  <main id="produtos">
+    <div class="produto-card" data-category="beleza">
+      <img src="https://via.placeholder.com/200x200" alt="Produto 1" />
+      <p>Tapete de Banheiro Soft 60x40cm</p>
+      <a href="https://shopee.com.br" target="_blank" class="botao">Ver na Shopee</a>
+    </div>
+
+    <div class="produto-card" data-category="pet">
+      <img src="https://via.placeholder.com/200x200" alt="Produto 2" />
+      <p>Bebedouro Automático para Pets</p>
+      <a href="https://mercadolivre.com.br" target="_blank" class="botao">Ver no Mercado Livre</a>
+    </div>
+  </main>
+
+</body>
+</html>

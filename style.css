@@ -17,8 +17,14 @@ header {
 }
 
 .logo {
-  max-width: 140px;
-  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  transform: scale(1.2);
+  margin: 10px;
+
 }
 
 .social-icons img {

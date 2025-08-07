@@ -1,16 +1,16 @@
-const SHEET_ID = '1MMdMCZP2jwb6VVaEbUs9DSXxjGphLFJsnIuM7gqR4Ho';
-const SHEET_NAME = 'Página1';
-const RANGE = 'A2:E';
-const API_KEY = 'AIzaSyCpZQWjoRaBA5b4s1EFuXi6vcNSWFSn5PQ';
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQIkQKdVnLm-MQbJVymtqlV7IGWoFQNxYtagebaNkC_ygx7A6SDJqdixjqwQEDWoCEu4jDCAd22zHKl/pub?gid=0&single=true&output=csv')
+  .then(res => res.text())
+  .then(csvText => {
+    // Transformar CSV em array (simples)
+    const linhas = csvText.trim().split('\n');
+    const dados = linhas.slice(1).map(linha => linha.split(',')); // pulando cabeçalho
+    
+    // filtra só produtos ativos (coluna 4 = 'sim')
+    const produtos = dados.filter(p => p[4]?.toLowerCase() === 'sim');
 
-const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}!${RANGE}?key=${API_KEY}`;
-
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    const produtos = data.values.filter(p => p[4]?.toLowerCase() === 'sim');
-
+    // pega categorias únicas da coluna 3
     const categorias = [...new Set(produtos.map(p => p[3]))];
+
     renderizarFiltros(categorias);
     renderizarProdutos(produtos);
 
@@ -22,28 +22,3 @@ fetch(url)
       });
     });
   });
-
-function renderizarFiltros(categorias) {
-  const container = document.getElementById('filters');
-  container.innerHTML = `<button class="filter-button" data-categoria="todos">Todos</button>`;
-  categorias.forEach(cat => {
-    container.innerHTML += `<button class="filter-button" data-categoria="${cat}">${cat}</button>`;
-  });
-}
-
-function renderizarProdutos(produtos) {
-  const container = document.getElementById('produtos-container');
-  container.innerHTML = '';
-
-  produtos.forEach(produto => {
-    const [imagem, descricao, link, categoria] = produto;
-    const card = document.createElement('div');
-    card.className = 'produto-card';
-    card.innerHTML = `
-      <img src="${imagem}" alt="${descricao}" />
-      <p>${descricao}</p>
-      <a class="botao" href="${link}" target="_blank">Ver Oferta</a>
-    `;
-    container.appendChild(card);
-  });
-}

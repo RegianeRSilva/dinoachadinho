@@ -1,5 +1,5 @@
 const SHEET_ID = '1MMdMCZP2jwb6VVaEbUs9DSXxjGphLFJsnIuM7gqR4Ho';
-const SHEET_NAME = 'dinoproduto';
+const SHEET_NAME = 'Página1';
 const RANGE = 'A2:E';
 const API_KEY = 'AIzaSyCpZQWjoRaBA5b4s1EFuXi6vcNSWFSn5PQ';
 

@@ -1,48 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dinochadinho | Achadinhos Imperdíveis</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="./media/dinofavicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dinochadinho</title>
+  <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
 </head>
 <body>
-
   <header>
-    <img src="/media/dinologo1.png" alt="Logo Dinochadinho" class="logo" />
+    <img src="logo.png" alt="Logo Dinochadinho" class="logo" />
     <div class="social-icons">
-      <a href="https://www.instagram.com/dinoachadinho?igsh=MTlmOHdjcGk5MDZxdA==" target="_blank"><img src="/media/iconinstagram.png" alt="Instagram" /></a>
-      <a href="https://www.tiktok.com/@dinoachadinho?_t=ZM-8ydiwBTvIpy&_r=1" target="_blank"><img src="/media/icontiktok.png" alt="TikTok" /></a>
-      <a href="https://whatsapp.com/channel/0029VbBRQ9t8KMqpI7tBK902" target="_blank"><img src="/media/iconwhatsapp.png" alt="WhatsApp" /></a>
+      <a href="https://www.instagram.com/SEU_USUARIO/" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@SEU_USUARIO" target="_blank">
+        <img src="tiktok.png" alt="TikTok">
+      </a>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp">
+      </a>
     </div>
   </header>
 
-  <section class="filters">
-    <button class="filter-button" data-category="todos">Todos</button>
-    <button class="filter-button" data-category="beleza">Beleza</button>
-    <button class="filter-button" data-category="casa">Casa</button>
-    <button class="filter-button" data-category="tech">Tecnologia</button>
-    <button class="filter-button" data-category="pet">Pet</button>
-    <button class="filter-button" data-category="cozinha">Cozinha</button>
-    <button class="filter-button" data-category="eletronicos">Eletrônicos</button>
-  </section>
+  <div class="filters" id="filters"></div>
 
-  <main id="produtos">
-    <div class="produto-card" data-category="beleza">
-      <img src="https://via.placeholder.com/200x200" alt="Produto 1" />
-      <p>Tapete de Banheiro Soft 60x40cm</p>
-      <a href="https://shopee.com.br" target="_blank" class="botao">Ver na Shopee</a>
-    </div>
+  <main id="produtos-container"></main>
 
-    <div class="produto-card" data-category="pet">
-      <img src="https://via.placeholder.com/200x200" alt="Produto 2" />
-      <p>Bebedouro Automático para Pets</p>
-      <a href="https://mercadolivre.com.br" target="_blank" class="botao">Ver no Mercado Livre</a>
-    </div>
-  </main>
-
+  <script src="script.js"></script>
 </body>
 </html>
